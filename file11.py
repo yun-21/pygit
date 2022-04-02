@@ -1,17 +1,24 @@
 import sys
-user = input("요청 할 파일이름을 적으시오: ")
-fileName = user
-accessMode = "r"
-try:
-    myFile = open(fileName, accessMode)
-    for i in range(1,4):
-        line = myFile.readline()
-        num=0
-        num += i
-        print(num,":",line)
+myF = open("file.txt", "w")
+myF.write("Opens a file for reading only in binary.\n")
+myF.write("The file pointer is placed.\n")
+myF.write("This is the default mode.")
+myF.close()
 
-    myFile.close()
+try:
+    user = input("요청 할 파일이름을 적으시오: ")
+    fileName = user
+    accessMode = "r"
+    myFile = open(fileName, accessMode)
+    num = 0
+    line = myFile.readline()
+    while line != "":
+        num += 1
+        print(num,":",line)
+        line = myFile.readline()
+
+
 except:
     error = sys.exc_info()
     print("요청하시는 파일이 없습니다.")
-    print(error)
+    print("어떤 오류인지 확인:",error)
