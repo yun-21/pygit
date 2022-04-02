@@ -9,7 +9,8 @@ while d=="Y":
         add = input("적으시오: ")
         myF.write(add+"\n")
     d = input("더 적고 싶습니까?(Y/N):")
-
+if d!="N":
+    print("다음부터는 (Y/N)중 하나로 적어주세요")
 myF.close()
 
 
