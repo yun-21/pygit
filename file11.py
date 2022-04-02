@@ -15,8 +15,8 @@ myF.close()
 
 
 try:
-    user = input("요청 할 파일이름을 적으시오: ")
-    fileName = user
+    user = input("요청 할 파일 이름을 적으시오(.txt는 빼고 이름만 적으세요): ")
+    fileName = user+".txt"
     accessMode = "r"
     myFile = open(fileName, accessMode)
     num = 0
